@@ -1,5 +1,5 @@
 {
-  "version": "20261107-flow-v5",
+  "version": "20261110-nstc-demo",
   "main": {
     "count": 25,
     "slides": [
@@ -115,13 +115,13 @@
       },
       {
         "page": 23,
-        "title": "研究起步材料",
-        "section": "起步與延伸"
+        "title": "NSTC Skill 實際操作",
+        "section": "NSTC Skill 實際操作"
       },
       {
         "page": 24,
-        "title": "同一個案例：七項任務的成果",
-        "section": "起步與延伸"
+        "title": "構想書初稿：重要章節",
+        "section": "NSTC Skill 實際操作"
       },
       {
         "page": 25,
