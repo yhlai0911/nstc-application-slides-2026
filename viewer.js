@@ -126,76 +126,73 @@
   "15": {},
   "16": {
     "right": [
-      "現象：央行升息時，不同銀行調高存款利率的速度可能不同。",
-      "研究起點：數位金融普及，會不會改變銀行競爭與調價？",
-      "資源：央行利率資料及銀行競爭相關文獻。"
+      "現象：股票與債券常被放在同一個投資組合，但有時也會一起下跌。",
+      "研究起點：在不同經濟衝擊下，債券還能否分散股票風險？",
+      "切入商品：股票 ETF 與不同期限的公債 ETF。"
     ]
   },
   "17": {
     "right": [
-      "核心問題：數位金融普及是否與銀行存款利率調整速度有關？",
-      "可能機制：比較資訊更容易，可能改變銀行爭取存款的競爭。",
-      "情境差異：客戶轉換銀行的便利程度是否影響這個關係？"
+      "核心問題：通膨衝擊與景氣衝擊下，股債 ETF 的分散效果有何不同？",
+      "可能原因：經濟消息可能讓股票與債券出現不同方向的反應。",
+      "情境差異：短期與長期公債 ETF 的效果是否不同？"
     ]
   },
   "18": {
     "right": [
-      "Driscoll 與 Judson（2013）：存款利率調整速度存在差異。",
-      "Erel 等（2023）：研究線上銀行與貨幣政策利率傳遞。",
-      "延伸方向：比較數位服務、客戶轉換與利率調整的關係；再比較最接近的研究。"
+      "Campbell 等（2020）：討論總體經濟與股債風險的關係。",
+      "Molenaar 等（2024）：檢視股債相關性與多資產組合風險。",
+      "延伸方向：比較不同衝擊下、不同期限債券 ETF 的組合表現。"
     ],
     "links": [
       [
-        "Driscoll 與 Judson（2013）：存款利率調整",
-        "https://www.federalreserve.gov/pubs/feds/2013/201380/"
+        "Campbell 等（2020）：總體經濟與股債風險",
+        "https://www.hbs.edu/ris/Publication%20Files/CampbellPfluegerViceira_JPE2020_c649d0cf-589b-4493-b695-c51d2ac45d48.pdf"
       ],
       [
-        "Erel 等（2023）：線上銀行與利率傳遞",
-        "https://www.nber.org/papers/w31380"
-      ],
-      [
-        "央行：五大銀行利率歷史資料",
-        "https://www.cbc.gov.tw/tw/np-1166-1.html"
+        "Molenaar 等（2024）：股債相關性",
+        "https://rpc.cfainstitute.org/research/financial-analysts-journal/2024/empirical-evidence-on-the-stock-bond-correlation"
       ]
     ]
   },
   "19": {
     "right": [
-      "概念價值：連結數位金融、銀行競爭與利率傳遞。",
-      "待釐清的機制：資訊搜尋與轉換銀行的成本如何影響競爭。",
-      "實務價值：幫助理解銀行利率調整差異。"
+      "概念價值：釐清不同經濟衝擊下，股債分散效果如何改變。",
+      "候選延伸：從股債關係進一步比較不同期限債券 ETF 的組合風險。",
+      "實務價值：幫助投資人理解分散效果會受到市場情境影響。"
     ]
   },
   "20": {
     "right": [
-      "央行提供五大銀行存放款利率歷史資料與牌告利率查詢。",
-      "銀行別利率、數位服務使用及轉換條件資料需確認可得性。",
-      "若缺少轉換資料，需調整可回答的問題範圍。"
+      "先確認股票與公債 ETF 的歷史行情及配息資料。",
+      "確認通膨與景氣資訊、商品成立時間及資料期間。",
+      "評估匯率與交易成本資料能否取得。"
     ]
   },
   "21": {
     "right": [
-      "方向一：數位服務普及與銀行利率調整差異。",
-      "方向二：存款人轉換銀行的成本與選擇。",
-      "優先檢查資料能否支撐方向一，再評估機制資料。"
+      "方向一：不同經濟衝擊下，股債分散效果如何變化。",
+      "方向二：不同期限公債 ETF 的組合風險差異。",
+      "優先聚焦方向一；資料允許時，再比較債券期限。"
     ]
   },
   "22": {
     "right": [
-      "候選題目：數位金融、銀行競爭與存款利率調整。",
-      "研究問題：數位服務普及與銀行調整利率的速度有何關係？",
-      "候選貢獻：理解數位服務與利率傳遞之間的可能機制。"
+      "候選題目：經濟衝擊下的股債 ETF 分散效果。",
+      "研究問題：通膨與景氣衝擊下，債券 ETF 分散股票風險的效果有何差異？",
+      "候選貢獻：將股債關係連結到投資組合在不同情境下的風險。"
     ]
   },
   "24": {
+    "title": "同一個案例：七項任務的成果",
     "overview": [
-      "1 起點：銀行利率調整差異",
-      "2 問題：數位金融與調整速度",
-      "3 文獻：存款利率與線上銀行",
-      "4 價值：競爭與利率傳遞",
-      "5 條件：銀行利率與數位資料",
-      "6 取捨：優先確認資料",
-      "7 構想：數位金融與利率調整"
+      "1 起點：股債 ETF 有時一起跌",
+      "2 問題：不同衝擊下的分散效果",
+      "3 文獻：總體環境與股債關係",
+      "4 價值：釐清分散效果變動",
+      "5 條件：確認 ETF 與經濟資料",
+      "6 取捨：先聚焦經濟衝擊",
+      "7 構想：股債 ETF 與組合風險"
     ]
   }
 };
@@ -203,12 +200,12 @@
   try{if(sessionStorage.getItem('nstc-case-choice')==='finance')selectedCase='finance'}catch{}
   function showCase(page){
     const data=selectedCase==='finance'?{...casePages[page],...financePages[page]}:casePages[page],container=$('case-card');container.replaceChildren();
-    const switches=document.createElement('nav');switches.className='case-switch';switches.setAttribute('aria-label','選題案例切換');for(const [value,text] of [['commerce','網購評論案例'],['finance','數位金融案例']]){const button=document.createElement('button');button.type='button';button.textContent=text;button.setAttribute('aria-pressed',String(selectedCase===value));button.addEventListener('click',()=>{selectedCase=value;try{sessionStorage.setItem('nstc-case-choice',value)}catch{}showCase(page)});switches.appendChild(button)}container.appendChild(switches);
-    const eyebrow=document.createElement('p');eyebrow.className='case-eyebrow';eyebrow.textContent=selectedCase==='finance'?'同一選題示範：數位金融與銀行利率':'同一選題示範：評論訊號衝突與消費者信任';container.appendChild(eyebrow);
+    const switches=document.createElement('nav');switches.className='case-switch';switches.setAttribute('aria-label','選題案例切換');for(const [value,text] of [['commerce','網購評論案例'],['finance','投資組合案例']]){const button=document.createElement('button');button.type='button';button.textContent=text;button.setAttribute('aria-pressed',String(selectedCase===value));button.addEventListener('click',()=>{selectedCase=value;try{sessionStorage.setItem('nstc-case-choice',value)}catch{}showCase(page)});switches.appendChild(button)}container.appendChild(switches);
+    const eyebrow=document.createElement('p');eyebrow.className='case-eyebrow';eyebrow.textContent=selectedCase==='finance'?'同一選題示範：股債 ETF 投資組合':'同一選題示範：評論訊號衝突與消費者信任';container.appendChild(eyebrow);
     const heading=document.createElement('h2');heading.textContent=data.title;container.appendChild(heading);
     if(data.overview){const list=document.createElement('ol');list.className='case-overview';for(const item of data.overview){const li=document.createElement('li');li.textContent=item;list.appendChild(li)}container.appendChild(list);return;}
     const content=document.createElement('div');content.className='case-columns';
-    for(const [title,items,cls] of [['這一步做什麼',data.left,'case-step'],[selectedCase==='finance'?'以數位金融為例':'以網購評論為例',data.right,'case-example']]){const section=document.createElement('section');section.className=cls;const h=document.createElement('h3');h.textContent=title;section.appendChild(h);const ul=document.createElement('ul');for(const item of items){const li=document.createElement('li');li.textContent=item;ul.appendChild(li)}section.appendChild(ul);if(cls==='case-example'&&data.links){const p=document.createElement('p');p.className='case-references';for(const [text,url] of data.links){const a=document.createElement('a');a.href=url;a.textContent=text;a.target='_blank';a.rel='noopener noreferrer';p.appendChild(a)}section.appendChild(p)}content.appendChild(section)}container.appendChild(content);
+    for(const [title,items,cls] of [['這一步做什麼',data.left,'case-step'],[selectedCase==='finance'?'以股債 ETF 為例':'以網購評論為例',data.right,'case-example']]){const section=document.createElement('section');section.className=cls;const h=document.createElement('h3');h.textContent=title;section.appendChild(h);const ul=document.createElement('ul');for(const item of items){const li=document.createElement('li');li.textContent=item;ul.appendChild(li)}section.appendChild(ul);if(cls==='case-example'&&data.links){const p=document.createElement('p');p.className='case-references';for(const [text,url] of data.links){const a=document.createElement('a');a.href=url;a.textContent=text;a.target='_blank';a.rel='noopener noreferrer';p.appendChild(a)}section.appendChild(p)}content.appendChild(section)}container.appendChild(content);
   }
   const sequence=[];
   for(let n=1;n<=total;n++){const chapter=chapters.find(c=>c.before===n);if(chapter)sequence.push({kind:'chapter',...chapter});if(mode==='main'&&n===5)sequence.push({kind:'history',id:'review-110'});sequence.push({kind:'slide',page:n});}
@@ -219,7 +216,7 @@
   function render(n){position=Math.max(0,Math.min(sequence.length-1,n));const entry=sequence[position], isChapter=entry.kind==='chapter', isHistory=entry.kind==='history', isCase=mode==='main'&&entry.kind==='slide'&&!!casePages[entry.page], card=$('chapter-card'), historyCard=$('history-card'), caseCard=$('case-card');
     if(card)card.hidden=!isChapter;if(historyCard)historyCard.hidden=!isHistory;if(caseCard)caseCard.hidden=!isCase;img.hidden=isChapter||isHistory||isCase;
     if(isChapter){$('chapter-number').textContent=`主題 ${String(chapters.findIndex(c=>c.id===entry.id)+1).padStart(2,'0')} / 03`;$('chapter-title').textContent=entry.title;$('chapter-description').textContent=entry.description;input.value='';}
-    else if(isHistory){input.value='';}else if(isCase){input.value=entry.page;showCase(entry.page);}else{input.value=entry.page;img.src=`${folder}/slide-${String(entry.page).padStart(2,'0')}.jpg?v=20261110-case-v9`;}
+    else if(isHistory){input.value='';}else if(isCase){input.value=entry.page;showCase(entry.page);}else{input.value=entry.page;img.src=`${folder}/slide-${String(entry.page).padStart(2,'0')}.jpg?v=20261110-case-v10`;}
     updateContext();$('prev').disabled=position===0;$('next').disabled=position===sequence.length-1;saveMain(entry);history.replaceState(null,'',`#${entry.kind!=='slide'?entry.id:entry.page}`);$('viewport').scrollTo(0,0);
   }
   function go(){const n=Number(input.value);if(input.value!==''&&Number.isFinite(n))render(findLocation(String(Math.max(1,Math.min(total,Math.trunc(n))))));}
@@ -227,7 +224,7 @@
   $('prev').onclick=()=>render(position-1);$('next').onclick=()=>render(position+1);$('go').onclick=go;input.onkeydown=e=>{if(e.key==='Enter')go()};$('out').onclick=()=>scale(zoom-25);$('in').onclick=()=>scale(zoom+25);$('reset').onclick=()=>scale(100);
   document.addEventListener('keydown',e=>{if(e.target===input)return;if(e.key==='ArrowRight')render(position+1);if(e.key==='ArrowLeft')render(position-1)});
   $('switch').addEventListener('click',()=>saveMain(sequence[position]));
-  fetch('presentation-manifest.json?v=20261110-case-v9').then(r=>{if(!r.ok)throw Error('manifest');return r.json()}).then(data=>{const part=data[mode];if(part?.count===total&&Array.isArray(part.slides)){slideInfo=part.slides;updateContext()}}).catch(()=>{});
-  if(mode==='appendix')fetch('public-source-links.json?v=20261110-case-v9').then(r=>{if(!r.ok)throw Error('sources');return r.json()}).then(items=>{if(!Array.isArray(items))return;for(const item of items){try{const url=new URL(item.url);if(url.protocol!=='https:'||typeof item.label!=='string')continue;const li=document.createElement('li'),a=document.createElement('a');a.href=url.href;a.textContent=item.label;a.target='_blank';a.rel='noopener noreferrer';li.appendChild(a);$('source-list').appendChild(li)}catch{}}if($('source-list').children.length)$('sources').hidden=false}).catch(()=>{});
+  fetch('presentation-manifest.json?v=20261110-case-v10').then(r=>{if(!r.ok)throw Error('manifest');return r.json()}).then(data=>{const part=data[mode];if(part?.count===total&&Array.isArray(part.slides)){slideInfo=part.slides;updateContext()}}).catch(()=>{});
+  if(mode==='appendix')fetch('public-source-links.json?v=20261110-case-v10').then(r=>{if(!r.ok)throw Error('sources');return r.json()}).then(items=>{if(!Array.isArray(items))return;for(const item of items){try{const url=new URL(item.url);if(url.protocol!=='https:'||typeof item.label!=='string')continue;const li=document.createElement('li'),a=document.createElement('a');a.href=url.href;a.textContent=item.label;a.target='_blank';a.rel='noopener noreferrer';li.appendChild(a);$('source-list').appendChild(li)}catch{}}if($('source-list').children.length)$('sources').hidden=false}).catch(()=>{});
   let start=location.hash.slice(1);if(!start&&mode==='main'){try{start=sessionStorage.getItem('nstc-main-location')||sessionStorage.getItem('nstc-main-page')||'1'}catch{start='1'}}render(findLocation(start||'1'));
 })();
