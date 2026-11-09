@@ -36,19 +36,27 @@
     "url": "https://tkutimes.tku.edu.tw/dtl.aspx?no=56999"
   },
   {
-    "label": "Chevalier 與 Mayzlin（2006）：網路書評與書籍銷售",
-    "url": "https://journals.sagepub.com/doi/10.1509/jmkr.43.3.345"
-  },
-  {
     "label": "Ahn 與 Lee（2024）：網路評論與購買意願",
     "url": "https://www.mdpi.com/0718-1876/19/2/55"
   },
   {
-    "label": "Felici 等（2022）：低利率與家庭儲蓄行為",
-    "url": "https://www.ecb.europa.eu/pub/pdf/scpwps/ecb.wp2736~b79d07069c.en.pdf"
+    "label": "Husain 等（2023）：評論文字、評分一致性與有用性",
+    "url": "https://www.informingscience.org/Publications/5187"
   },
   {
-    "label": "Elmendorf（1996）：利率與家庭儲蓄研究回顧",
-    "url": "https://www.federalreserve.gov/pubs/feds/1996/199627/199627pap.pdf"
+    "label": "Amazon Reviews 2023 商品評論資料",
+    "url": "https://amazon-reviews-2023.github.io/"
+  },
+  {
+    "label": "Driscoll 與 Judson（2013）：存款利率調整",
+    "url": "https://www.federalreserve.gov/pubs/feds/2013/201380/"
+  },
+  {
+    "label": "Erel 等（2023）：線上銀行與貨幣政策傳遞",
+    "url": "https://www.nber.org/papers/w31380"
+  },
+  {
+    "label": "央行：五大銀行存放款利率歷史資料",
+    "url": "https://www.cbc.gov.tw/tw/np-1166-1.html"
   }
 ]
