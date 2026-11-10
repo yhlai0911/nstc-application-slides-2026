@@ -226,8 +226,16 @@
   }
   function go(){const n=Number(input.value);if(input.value!==''&&Number.isFinite(n))render(findLocation(String(Math.max(1,Math.min(total,Math.trunc(n))))));}
   function scale(n){zoom=Math.max(100,Math.min(250,n));frame.style.width=zoom===100?'min(100%, 1280px)':`${zoom}%`;frame.style.maxWidth=zoom===100?'1280px':'none';$('reset').textContent=zoom+'%'}
+  const menu=$('chapter-menu'), menuToggle=$('menu-toggle');
+  const menuItems=mode==='main'?[['簡報首頁','1'],['背景與來源','2'],['五項共同關注','chapter-1'],['七項選題任務','15'],['任務 1：盤點資源','16'],['任務 2：形成問題','17'],['任務 3：對照文獻','18'],['任務 4：說清價值','19'],['任務 5：確認可行條件','20'],['任務 6：篩選方向','21'],['任務 7：整理一頁構想','22'],['操作示範','chapter-3'],['示範影片與逐字稿','23']]:[['補充資料首頁','1'],['來源與評語分類','3'],['歷年配分與現行表件','17']];
+  function closeMenu(restoreFocus=false){menu.hidden=true;menuToggle.setAttribute('aria-expanded','false');if(restoreFocus)menuToggle.focus()}
+  menuItems.forEach(([text,id])=>{const button=document.createElement('button');button.type='button';button.textContent=text;button.addEventListener('click',()=>{render(findLocation(id));closeMenu(true)});menu.appendChild(button)});
+  const other=document.createElement('a');other.href=mode==='main'?'appendix.html':'index.html';other.textContent=mode==='main'?'查看補充資料 →':'← 返回主簡報';other.addEventListener('click',()=>saveMain(sequence[position]));menu.appendChild(other);
+  menuToggle.addEventListener('click',()=>{const open=menu.hidden;menu.hidden=!open;menuToggle.setAttribute('aria-expanded',String(open))});
+  document.addEventListener('click',e=>{if(!e.target.closest('.chapter-menu'))closeMenu()});
+  document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){e.preventDefault();closeMenu(true)}});
   $('prev').onclick=()=>render(position-1);$('next').onclick=()=>render(position+1);$('go').onclick=go;input.onkeydown=e=>{if(e.key==='Enter')go()};$('out').onclick=()=>scale(zoom-25);$('in').onclick=()=>scale(zoom+25);$('reset').onclick=()=>scale(100);
-  document.addEventListener('keydown',e=>{if(e.target===input)return;if(e.key==='ArrowRight')render(position+1);if(e.key==='ArrowLeft')render(position-1)});
+  document.addEventListener('keydown',e=>{if(!menu.hidden||e.target.closest('input, textarea, select, video, audio, [contenteditable=\"true\"]'))return;if(e.key==='ArrowRight')render(position+1);if(e.key==='ArrowLeft')render(position-1)});
   $('switch').addEventListener('click',()=>saveMain(sequence[position]));
   fetch('presentation-manifest.json?v=20261110-nstc-demo-v2').then(r=>{if(!r.ok)throw Error('manifest');return r.json()}).then(data=>{const part=data[mode];if(part?.count===total&&Array.isArray(part.slides)){slideInfo=part.slides;updateContext()}}).catch(()=>{});
   if(mode==='appendix')fetch('public-source-links.json?v=20261110-nstc-demo-v2').then(r=>{if(!r.ok)throw Error('sources');return r.json()}).then(items=>{if(!Array.isArray(items))return;for(const item of items){try{const url=new URL(item.url);if(url.protocol!=='https:'||typeof item.label!=='string')continue;const li=document.createElement('li'),a=document.createElement('a');a.href=url.href;a.textContent=item.label;a.target='_blank';a.rel='noopener noreferrer';li.appendChild(a);$('source-list').appendChild(li)}catch{}}if($('source-list').children.length)$('sources').hidden=false}).catch(()=>{});
