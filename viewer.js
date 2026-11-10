@@ -234,6 +234,10 @@
   menuToggle.addEventListener('click',()=>{const open=menu.hidden;menu.hidden=!open;menuToggle.setAttribute('aria-expanded',String(open))});
   document.addEventListener('click',e=>{if(!e.target.closest('.chapter-menu'))closeMenu()});
   document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){e.preventDefault();closeMenu(true)}});
+  if(mode==='main'){
+    $('view-brief').addEventListener('click',()=>render(findLocation('22')));
+    $('copy-prompt').addEventListener('click',async()=>{const prompt=$('starter-prompt'),status=$('copy-status');try{await navigator.clipboard.writeText(prompt.value);status.textContent='已複製，可貼到您的 AI 對話中。'}catch{prompt.focus();prompt.select();status.textContent='請複製已選取的文字。'}});
+  }
   $('prev').onclick=()=>render(position-1);$('next').onclick=()=>render(position+1);$('go').onclick=go;input.onkeydown=e=>{if(e.key==='Enter')go()};$('out').onclick=()=>scale(zoom-25);$('in').onclick=()=>scale(zoom+25);$('reset').onclick=()=>scale(100);
   document.addEventListener('keydown',e=>{if(!menu.hidden||e.target.closest('input, textarea, select, video, audio, [contenteditable=\"true\"]'))return;if(e.key==='ArrowRight')render(position+1);if(e.key==='ArrowLeft')render(position-1)});
   $('switch').addEventListener('click',()=>saveMain(sequence[position]));
