@@ -24,7 +24,7 @@
     "right": [
       "現象：商品有高星等，但評論文字可能提到明顯缺點。",
       "研究起點：當評價訊號互相矛盾，消費者如何判斷可信度？",
-      "資源：既有評論研究與公開商品評論資料。"
+      "可盤點資源：評論研究專長、商品評論資料與合作對象。"
     ]
   },
   "17": {
@@ -128,7 +128,7 @@
     "right": [
       "現象：股票與債券常被放在同一個投資組合，但有時也會一起下跌。",
       "研究起點：在不同經濟衝擊下，債券還能否分散股票風險？",
-      "切入商品：股票 ETF 與不同期限的公債 ETF。"
+      "可盤點資源：投資組合研究專長、股債 ETF 行情與合作對象。"
     ]
   },
   "17": {
@@ -201,7 +201,15 @@
     commerce:{title:'評價訊號衝突、消費者信任與商品風險',items:[['研究問題','星等與評論文字衝突時，消費者如何判斷評論可信度？'],['近鄰文獻','Husain 等（2023）；Ahn 與 Lee（2024）。'],['候選貢獻','探討評論訊號衝突與可信度的關係，以及商品風險的可能差異。'],['資料條件','需要：商品評論的星等與文字；另行測量消費者信任及商品風險。'],['最重要待查','既有研究是否已比較星等與文字衝突對評論可信度的影響？'],['下一步','核讀兩篇文獻的研究問題與信任指標，並檢查評論資料的欄位及使用授權。']]}
   };
   let draftText='候選題目：\n研究問題：\n近鄰文獻：\n候選貢獻：\n資料條件：\n最重要待查：\n下一步：';
-  let literatureDraft='研究問題：\n最接近的文獻：\n文獻已回答：\n我想進一步探討：';
+  const taskGuides={
+    16:{goal:'從有興趣的現象出發，整理自己的專長，以及可以運用的資料與合作資源。',question:'你關心什麼現象？有哪些專長、資料或合作資源可以幫助你研究？',fields:['關心的現象','我的專長','可用的資料或合作資源']},
+    17:{goal:'把感興趣的現象收斂成研究問題，想清楚可能的原因與比較情境。',question:'你想解釋什麼現象？可能的原因是什麼？在哪些情境下值得比較？',fields:['研究現象','研究問題','可能原因或比較情境']},
+    18:{goal:'找到接近自己問題的研究，整理它們回答了什麼，再想清楚自己想往哪裡推進。',question:'找一篇最接近你問題的研究：它回答了什麼？你想再往哪裡推進？',fields:['研究問題','最接近的文獻','文獻已回答','我想進一步探討']},
+    19:{goal:'說明研究可能帶來的新理解，以及對實務或特定對象的幫助。',question:'你的研究可能增加什麼理解？誰可能從結果受益？',fields:['研究可能增加的理解','可能受益的對象','實務上的幫助']},
+    20:{goal:'盤點回答研究問題所需的資料、能力與時間，找出需要先確認的條件。',question:'回答你的問題需要什麼資料和能力？哪些條件需要先確認？',fields:['需要的資料','研究能力或合作資源','資料權限與時間','優先確認的條件']},
+    21:{goal:'比較候選方向的研究價值與可行條件，選出值得優先深入的一個方向。',question:'列出兩個方向，依研究價值與可行條件比較：你要先做哪一個？',fields:['方向一','方向二','價值與條件比較','優先方向及理由']}
+  };
+  const taskDrafts=Object.fromEntries(Object.entries(taskGuides).map(([page,guide])=>[page,guide.fields.map(field=>`${field}：`).join('\n')]));
   let selectedCase='commerce';
   try{if(sessionStorage.getItem('nstc-case-choice')==='finance')selectedCase='finance'}catch{}
   function showCase(page){
@@ -209,11 +217,11 @@
     const switches=document.createElement('nav');switches.className='case-switch';switches.setAttribute('aria-label','選題案例切換');for(const [value,text] of [['commerce','網購評論案例'],['finance','投資組合案例']]){const button=document.createElement('button');button.type='button';button.textContent=text;button.setAttribute('aria-pressed',String(selectedCase===value));button.addEventListener('click',()=>{selectedCase=value;try{sessionStorage.setItem('nstc-case-choice',value)}catch{}showCase(page)});switches.appendChild(button)}container.appendChild(switches);
     const eyebrow=document.createElement('p');eyebrow.className='case-eyebrow';eyebrow.textContent=selectedCase==='finance'?'同一選題示範：股債 ETF 投資組合':'同一選題示範：評論訊號衝突與消費者信任';container.appendChild(eyebrow);
     const heading=document.createElement('h2');heading.textContent=data.title;container.appendChild(heading);
-    if(page===18){
-      const goal=document.createElement('section');goal.className='literature-goal';goal.innerHTML='<h3>這一步要完成什麼</h3><p>找到接近自己問題的研究，整理它們回答了什麼，再想清楚自己想往哪裡推進。</p>';container.appendChild(goal);
+    if(taskGuides[page]){
+      const guide=taskGuides[page];const goal=document.createElement('section');goal.className='literature-goal';const goalHeading=document.createElement('h3');goalHeading.textContent='這一步要完成什麼';const goalText=document.createElement('p');goalText.textContent=guide.goal;goal.append(goalHeading,goalText);container.appendChild(goal);
       const sample=document.createElement('section');sample.className='literature-sample';const heading=document.createElement('h3');heading.textContent=selectedCase==='finance'?'看看案例：股債 ETF':'看看案例：網購評論';sample.appendChild(heading);
-      const cards=document.createElement('div');cards.className='literature-cards';for(const [i,item] of data.right.entries()){const section=document.createElement('section');section.className='brief-item';const title=document.createElement('h4');title.textContent=i<2?`文獻 ${i+1}`:'想進一步探討';const p=document.createElement('p');p.textContent=item;section.append(title,p);if(i<2&&data.links?.[i]){const a=document.createElement('a');a.href=data.links[i][1];a.textContent='閱讀文獻 ↗';a.target='_blank';a.rel='noopener noreferrer';section.appendChild(a)}cards.appendChild(section)}sample.appendChild(cards);container.appendChild(sample);
-      const exercise=document.createElement('section');exercise.className='literature-exercise';const h=document.createElement('h3');h.textContent='換你試試';const p=document.createElement('p');p.textContent='找一篇最接近你問題的研究：它回答了什麼？你想再往哪裡推進？';const label=document.createElement('label');label.htmlFor='literature-draft';label.textContent='寫下你的初步想法';const area=document.createElement('textarea');area.id='literature-draft';area.rows=4;area.value=literatureDraft;area.addEventListener('input',()=>{literatureDraft=area.value});const note=document.createElement('p');note.className='literature-note';note.textContent='內容不會自動儲存，離開或重新整理前請複製。';const copy=document.createElement('button');copy.type='button';copy.textContent='複製我的想法';const status=document.createElement('span');status.className='brief-status';status.setAttribute('role','status');copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(area.value);status.textContent='已複製。'}catch{area.focus();area.select();status.textContent='請複製已選取的文字。'}});exercise.append(h,p,label,area,note,copy,status);container.appendChild(exercise);return;
+      const cards=document.createElement('div');cards.className='literature-cards';for(const [i,item] of data.right.entries()){const section=document.createElement('section');section.className='brief-item';const title=document.createElement('h4');const separator=item.indexOf('：');title.textContent=page===18?(i<2?`文獻 ${i+1}`:'想進一步探討'):(separator>0?item.slice(0,separator):['資料需求','確認條件','評估重點'][i]);const p=document.createElement('p');p.textContent=page===18?item:(separator>0?item.slice(separator+1):item);section.append(title,p);if(page===18&&i<2&&data.links?.[i]){const a=document.createElement('a');a.href=data.links[i][1];a.textContent='閱讀文獻 ↗';a.target='_blank';a.rel='noopener noreferrer';section.appendChild(a)}cards.appendChild(section)}sample.appendChild(cards);container.appendChild(sample);
+      const exercise=document.createElement('section');exercise.className='literature-exercise';const h=document.createElement('h3');h.textContent='換你試試';const p=document.createElement('p');p.textContent=guide.question;const label=document.createElement('label');label.htmlFor='literature-draft';label.textContent='寫下你的初步想法';const area=document.createElement('textarea');area.id='literature-draft';area.rows=guide.fields.length;area.value=taskDrafts[page];area.addEventListener('input',()=>{taskDrafts[page]=area.value});const note=document.createElement('p');note.className='literature-note';note.textContent='內容不會自動儲存，離開或重新整理前請複製。';const copy=document.createElement('button');copy.type='button';copy.textContent='複製我的想法';const status=document.createElement('span');status.className='brief-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(area.value);status.textContent='已複製。'}catch{area.focus();area.select();status.textContent='請複製已選取的文字。'}});exercise.append(h,p,label,area,note,copy,status);container.appendChild(exercise);return;
     }
     if(page===22){
       const sample=briefSamples[selectedCase];
