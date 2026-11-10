@@ -201,6 +201,7 @@
     commerce:{title:'評價訊號衝突、消費者信任與商品風險',items:[['研究問題','星等與評論文字衝突時，消費者如何判斷評論可信度？'],['近鄰文獻','Husain 等（2023）；Ahn 與 Lee（2024）。'],['候選貢獻','探討評論訊號衝突與可信度的關係，以及商品風險的可能差異。'],['資料條件','需要：商品評論的星等與文字；另行測量消費者信任及商品風險。'],['最重要待查','既有研究是否已比較星等與文字衝突對評論可信度的影響？'],['下一步','核讀兩篇文獻的研究問題與信任指標，並檢查評論資料的欄位及使用授權。']]}
   };
   let draftText='候選題目：\n研究問題：\n近鄰文獻：\n候選貢獻：\n資料條件：\n最重要待查：\n下一步：';
+  let literatureDraft='研究問題：\n最接近的文獻：\n文獻已回答：\n我想進一步探討：';
   let selectedCase='commerce';
   try{if(sessionStorage.getItem('nstc-case-choice')==='finance')selectedCase='finance'}catch{}
   function showCase(page){
@@ -208,6 +209,12 @@
     const switches=document.createElement('nav');switches.className='case-switch';switches.setAttribute('aria-label','選題案例切換');for(const [value,text] of [['commerce','網購評論案例'],['finance','投資組合案例']]){const button=document.createElement('button');button.type='button';button.textContent=text;button.setAttribute('aria-pressed',String(selectedCase===value));button.addEventListener('click',()=>{selectedCase=value;try{sessionStorage.setItem('nstc-case-choice',value)}catch{}showCase(page)});switches.appendChild(button)}container.appendChild(switches);
     const eyebrow=document.createElement('p');eyebrow.className='case-eyebrow';eyebrow.textContent=selectedCase==='finance'?'同一選題示範：股債 ETF 投資組合':'同一選題示範：評論訊號衝突與消費者信任';container.appendChild(eyebrow);
     const heading=document.createElement('h2');heading.textContent=data.title;container.appendChild(heading);
+    if(page===18){
+      const goal=document.createElement('section');goal.className='literature-goal';goal.innerHTML='<h3>這一步要完成什麼</h3><p>找到接近自己問題的研究，整理它們回答了什麼，再想清楚自己想往哪裡推進。</p>';container.appendChild(goal);
+      const sample=document.createElement('section');sample.className='literature-sample';const heading=document.createElement('h3');heading.textContent=selectedCase==='finance'?'看看案例：股債 ETF':'看看案例：網購評論';sample.appendChild(heading);
+      const cards=document.createElement('div');cards.className='literature-cards';for(const [i,item] of data.right.entries()){const section=document.createElement('section');section.className='brief-item';const title=document.createElement('h4');title.textContent=i<2?`文獻 ${i+1}`:'想進一步探討';const p=document.createElement('p');p.textContent=item;section.append(title,p);if(i<2&&data.links?.[i]){const a=document.createElement('a');a.href=data.links[i][1];a.textContent='閱讀文獻 ↗';a.target='_blank';a.rel='noopener noreferrer';section.appendChild(a)}cards.appendChild(section)}sample.appendChild(cards);container.appendChild(sample);
+      const exercise=document.createElement('section');exercise.className='literature-exercise';const h=document.createElement('h3');h.textContent='換你試試';const p=document.createElement('p');p.textContent='找一篇最接近你問題的研究：它回答了什麼？你想再往哪裡推進？';const label=document.createElement('label');label.htmlFor='literature-draft';label.textContent='寫下你的初步想法';const area=document.createElement('textarea');area.id='literature-draft';area.rows=4;area.value=literatureDraft;area.addEventListener('input',()=>{literatureDraft=area.value});const note=document.createElement('p');note.className='literature-note';note.textContent='內容不會自動儲存，離開或重新整理前請複製。';const copy=document.createElement('button');copy.type='button';copy.textContent='複製我的想法';const status=document.createElement('span');status.className='brief-status';status.setAttribute('role','status');copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(area.value);status.textContent='已複製。'}catch{area.focus();area.select();status.textContent='請複製已選取的文字。'}});exercise.append(h,p,label,area,note,copy,status);container.appendChild(exercise);return;
+    }
     if(page===22){
       const sample=briefSamples[selectedCase];
       const title=document.createElement('p');title.className='brief-title';title.textContent=`候選題目｜${sample.title}`;container.appendChild(title);
