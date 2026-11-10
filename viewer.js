@@ -197,8 +197,8 @@
   }
 };
   const briefSamples={
-    finance:{title:'經濟衝擊下的股債 ETF 分散效果',items:[['研究問題','通膨與景氣衝擊下，債券 ETF 分散股票風險的效果有何不同？'],['近鄰文獻','先比較 Campbell 等（2020）與 Molenaar 等（2024）；是否為最接近研究，仍需核讀。'],['候選貢獻','探討不同衝擊下分散效果的差異；相對既有研究的增量待確認。'],['資料條件','候選資料：股票與不同期限公債 ETF 行情、配息及經濟資訊；涵蓋期間與權限待查。'],['最重要待查','現有文獻是否已回答相同問題？ETF、衝擊指標及交易成本資料是否可取得？'],['下一步','核讀最接近文獻，確認資料後，選定比較期間與主要研究問題。']]},
-    commerce:{title:'評價訊號衝突、消費者信任與商品風險',items:[['研究問題','星等與評論文字衝突時，消費者如何判斷評論可信度？'],['近鄰文獻','先比較 Husain 等（2023）與 Ahn、Lee（2024）；是否為最接近研究，仍需核讀。'],['候選貢獻','探討訊號衝突與可信度的關係，以及商品風險的可能差異；研究增量待確認。'],['資料條件','候選資料：商品評論、星等與文字；信任感受及商品風險如何取得仍待確認。'],['最重要待查','既有研究是否已有相同答案？資料能否測量消費者信任及取得授權？'],['下一步','核讀近鄰並檢查資料欄位，再決定是否加入商品風險的比較。']]}
+    finance:{title:'經濟衝擊下的股債 ETF 分散效果',items:[['研究問題','通膨與景氣衝擊下，債券 ETF 分散股票風險的效果有何不同？'],['近鄰文獻','Campbell 等（2020）；Molenaar 等（2024）。'],['候選貢獻','比較不同經濟衝擊下，股債 ETF 的分散效果。'],['資料條件','需要：股票與不同期限公債 ETF 的行情、配息及經濟資訊。'],['最重要待查','既有研究是否比較通膨與景氣衝擊下的股債 ETF 分散效果？'],['下一步','核讀兩篇文獻的研究對象、衝擊定義與衡量方式，並確認 ETF 行情與配息資料的期間及使用權限。']]},
+    commerce:{title:'評價訊號衝突、消費者信任與商品風險',items:[['研究問題','星等與評論文字衝突時，消費者如何判斷評論可信度？'],['近鄰文獻','Husain 等（2023）；Ahn 與 Lee（2024）。'],['候選貢獻','探討評論訊號衝突與可信度的關係，以及商品風險的可能差異。'],['資料條件','需要：商品評論的星等與文字；另行測量消費者信任及商品風險。'],['最重要待查','既有研究是否已比較星等與文字衝突對評論可信度的影響？'],['下一步','核讀兩篇文獻的研究問題與信任指標，並檢查評論資料的欄位及使用授權。']]}
   };
   let draftText='候選題目：\n研究問題：\n近鄰文獻：\n候選貢獻：\n資料條件：\n最重要待查：\n下一步：';
   let selectedCase='commerce';
@@ -209,7 +209,7 @@
     const eyebrow=document.createElement('p');eyebrow.className='case-eyebrow';eyebrow.textContent=selectedCase==='finance'?'同一選題示範：股債 ETF 投資組合':'同一選題示範：評論訊號衝突與消費者信任';container.appendChild(eyebrow);
     const heading=document.createElement('h2');heading.textContent=data.title;container.appendChild(heading);
     if(page===22){
-      const sample=briefSamples[selectedCase],intro=document.createElement('p');intro.className='brief-intro';intro.textContent='以下為示範草案，內容與資料取得狀態仍須查證。';container.appendChild(intro);
+      const sample=briefSamples[selectedCase];
       const title=document.createElement('p');title.className='brief-title';title.textContent=`候選題目｜${sample.title}`;container.appendChild(title);
       const grid=document.createElement('div');grid.className='brief-grid';for(const [name,text] of sample.items){const section=document.createElement('section');section.className='brief-item';const h=document.createElement('h3');h.textContent=name;const p=document.createElement('p');p.textContent=text;section.append(h,p);if(name==='近鄰文獻'){const refs=document.createElement('div');refs.className='brief-references';for(const [text,url] of (selectedCase==='finance'?financePages[18].links:casePages[18].links)){const a=document.createElement('a');a.href=url;a.textContent=text;a.target='_blank';a.rel='noopener noreferrer';refs.appendChild(a)}section.appendChild(refs)}grid.appendChild(section)}container.appendChild(grid);
       const details=document.createElement('details');details.className='brief-template';const summary=document.createElement('summary');summary.textContent='用空白架構寫自己的構想';const note=document.createElement('p');note.textContent='可在下方修改並複製文字；內容不會自動儲存，請在重新整理或離開前複製。研究題目由您決定。';const label=document.createElement('label');label.htmlFor='brief-draft';label.textContent='我的一頁構想';const area=document.createElement('textarea');area.id='brief-draft';area.rows=9;area.value=draftText;area.addEventListener('input',()=>{draftText=area.value});const copy=document.createElement('button');copy.type='button';copy.textContent='複製我的構想';const status=document.createElement('span');status.className='brief-status';status.setAttribute('role','status');status.setAttribute('aria-live','polite');copy.addEventListener('click',async()=>{try{await navigator.clipboard.writeText(area.value);status.textContent='已複製，可貼到自己的文件。'}catch{area.focus();area.select();status.textContent='請複製已選取的文字。'}});details.append(summary,note,label,area,copy,status);container.appendChild(details);return;
