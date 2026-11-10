@@ -30,3 +30,12 @@ header{display:flex;align-items:center;gap:.8rem;min-height:42px;padding:6px 14p
 .literature-goal,.literature-sample,.literature-exercise{margin:1rem 0}.literature-goal{background:#174d3e;color:#fff;padding:.85rem 1rem;border-radius:.35rem}.literature-goal h3,.literature-sample h3,.literature-exercise h3{margin:0 0 .45rem;font-size:1.1rem}.literature-goal p,.literature-exercise p{margin:.35rem 0;line-height:1.5}.literature-cards{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:.75rem}.literature-cards h4{margin:0 0 .45rem;color:#174d3e;font-size:1rem}.literature-cards p{font-size:1rem;line-height:1.5}.literature-cards a{display:inline-block;color:#174d3e;margin-top:.7rem}.literature-exercise{background:#e7eee8;padding:1rem;border-radius:.4rem}.literature-exercise label{display:block;font-weight:700;margin:.8rem 0 .35rem}.literature-exercise textarea{width:100%;padding:.7rem;border:1px solid #9cb7a8;border-radius:.4rem;font:inherit;line-height:1.5;resize:vertical}.literature-exercise .literature-note{font-size:.9rem;color:#496457}.literature-exercise button{min-height:44px;margin-top:.4rem}@media(max-width:650px){.literature-cards{grid-template-columns:1fr}}
 
 .literature-exercise summary{cursor:pointer;font-size:1.1rem;font-weight:700;color:#174d3e}.literature-exercise summary:focus-visible{outline:3px solid #b8913e;outline-offset:3px}.literature-exercise[open] summary{margin-bottom:.6rem}
+
+/* 放大七項任務的內容，兼顧投影與窄螢幕閱讀 */
+.literature-goal h3,.literature-sample h3,.literature-exercise summary,.brief-item h3,.literature-cards h4{font-size:clamp(1.12rem,1.4vw,1.35rem)}
+.literature-goal p,.literature-cards p,.literature-exercise p,.literature-exercise label,.literature-exercise textarea,.brief-item p{font-size:clamp(1.08rem,1.35vw,1.3rem);line-height:1.5}
+.literature-cards a,.brief-references,.brief-template summary{font-size:clamp(1.02rem,1.18vw,1.16rem)}
+.literature-exercise .literature-note{font-size:1rem}
+
+.brief-template p,.brief-template label,.brief-template textarea{font-size:clamp(1.08rem,1.35vw,1.3rem)}
+@media (min-width:651px) and (max-width:800px){.literature-cards{grid-template-columns:repeat(2,minmax(0,1fr))}}
